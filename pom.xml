@@ -78,6 +78,19 @@
 				<encoding>${project.build.sourceEncoding}</encoding>  
 			</configuration>
 		   </plugin>
+          <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
