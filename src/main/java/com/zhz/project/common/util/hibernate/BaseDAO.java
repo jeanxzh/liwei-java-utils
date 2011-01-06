@@ -15,36 +15,42 @@ import org.springframework.stereotype.Repository;
 public class BaseDAO extends HibernateDaoSupport {
     private static Logger logger = Logger.getLogger(BaseDAO.class);
 
+    @SuppressWarnings("unchecked")
     public List list(String table) {
         return this.getHibernateTemplate().find("from " + table);
     }
 
-    /*
-     * 
+    /**
      * 获取某次查询集合的数量
+     * @param FromQuery
+     * @return
      */
+    @SuppressWarnings("unchecked")
     public int getNumOnQuery(String FromQuery) {
         String querySentence = "SELECT count(*) " + FromQuery;
         List list = this.getHibernateTemplate().find(querySentence);
-        Long countLong = (Long) list.get(0);
-        int count = countLong.intValue();
-        return count;
-
+        if (list != null && list.size() > 0) {
+            Long countLong = (Long) list.get(0);
+            int count = countLong.intValue();
+            return count;
+        } else {
+            return 0;
+        }
     }
 
     /**
      * 执行一般查询 Sql语句
      */
+    @SuppressWarnings("unchecked")
     public List select(String sqlStr) {
         List list = null;
         try {
             list = this.getHibernateTemplate().find(sqlStr);
+            return list;
         } catch (Exception e) {
-            logger.error("查询语句错误:\n" + sqlStr + "\n" + e.toString(), e);
+            logger.error("查询语句错误:" + sqlStr, e);
             return null;
         }
-        return list;
-
     }
 
     /**
@@ -54,12 +60,11 @@ public class BaseDAO extends HibernateDaoSupport {
         boolean re = true;
         try {
             this.getHibernateTemplate().save(obj);
-            re = true;
+            return re;
         } catch (Exception e) {
-            logger.error("保存数据错误.类名称为:" + obj.getClass().getName() + "\n" + e.toString(), e);
-            re = false;
+            logger.error("保存数据错误.类名称为:" + obj.getClass().getName(), e);
+            return false;
         }
-        return re;
     }
 
     /**
@@ -69,11 +74,12 @@ public class BaseDAO extends HibernateDaoSupport {
         boolean re = true;
         try {
             this.getHibernateTemplate().update(obj);
+            return re;
+
         } catch (Exception e) {
-            logger.error("更新数据错误.类名称为:" + obj.getClass().getName() + "\n" + e.toString(), e);
-            re = false;
+            logger.error("更新数据错误.类名称为:" + obj.getClass().getName(), e);
+            return false;
         }
-        return re;
     }
 
     /**
@@ -81,16 +87,17 @@ public class BaseDAO extends HibernateDaoSupport {
      * 
      * @param obj
      */
+    @SuppressWarnings("unchecked")
     public List find(String table, String keyName, String keyField) {
         List re = null;
         try {
             re = this.getHibernateTemplate().find(
                 " from " + table + " where " + keyName + "='" + keyField + "'");
-        } catch (Exception e) {
-            logger.error("查找数据错误.类名称为:" + table + "\n" + e.toString(), e);
             return re;
+        } catch (Exception e) {
+            logger.error("查找数据错误.类名称为:" + table, e);
+            return null;
         }
-        return re;
     }
 
     /**
@@ -98,62 +105,82 @@ public class BaseDAO extends HibernateDaoSupport {
      * 
      * @param obj
      */
-    // /
+    @SuppressWarnings("unchecked")
     public List findbyorderlimit(String table, String keyName, String keyField, String orderlimit) {
         List re = null;
         try {
             re = this.getHibernateTemplate().find(
                 " from " + table + " where " + keyName + "='" + keyField + "'" + orderlimit);
-        } catch (Exception e) {
-            logger.error("查找数据错误.类名称为:" + table + "\n" + e.toString(), e);
             return re;
+        } catch (Exception e) {
+            logger.error("查找数据错误.类名称为:" + table, e);
+            return null;
         }
-        return re;
     }
 
-    // 用于分页
+    /**
+     * 用于分页
+     * @param table
+     * @param keyName
+     * @param keyValue
+     * @return
+     */
+    @SuppressWarnings("unchecked")
     public List findOne(String table, String keyName, String keyValue) {
         List re = null;
         try {
             re = this.getHibernateTemplate().find(
                 " from " + table + " where " + keyName + "='" + keyValue + "'");
+            return re;
 
         } catch (Exception e) {
-            logger.error("查找数据错误.类名称为:" + table + "\n" + e.toString(), e);
-            return re;
+            logger.error("查找数据错误.类名称为:" + table, e);
+            return null;
         }
-        return re;
     }
 
+    @SuppressWarnings("unchecked")
     public Object findOneObject(String table, String keyName, String keyValue) {
         List re = null;
         try {
             re = this.getHibernateTemplate().find(
                 " from " + table + " where " + keyName + "='" + keyValue + "'");
 
+            if (re != null && re.size() > 0) {
+                return re.get(0);
+            } else {
+                return null;
+            }
         } catch (Exception e) {
-            logger.error("查找数据错误.类名称为:" + table + "\n" + e.toString(), e);
-            return re;
+            logger.error("查找数据错误.类名称为:" + table, e);
+            return null;
         }
-        re.get(0);
-        return re.get(0);
+
     }
 
+    @SuppressWarnings("unchecked")
     public List findAllByPage(final String table, final String whereStatement, final String order,
                               final int pageNow, final int pageSize) {
-        List list = (List) this.getHibernateTemplate().execute(new HibernateCallback() {
-            int size = pageNow * pageSize - pageSize;
 
-            public Object doInHibernate(Session session) throws HibernateException, SQLException {
-                Query q = session.createQuery("from " + table + " " + whereStatement + " " + order);
-                q.setFirstResult(size);
-                q.setMaxResults(pageSize);
-                List list = q.list();
-                return list;
-            }
-        });
+        try {
+            List list = (List) this.getHibernateTemplate().execute(new HibernateCallback() {
+                int size = pageNow * pageSize - pageSize;
 
-        return list;
+                public Object doInHibernate(Session session) throws HibernateException,
+                                                            SQLException {
+                    Query q = session.createQuery("from " + table + " " + whereStatement + " "
+                                                  + order);
+                    q.setFirstResult(size);
+                    q.setMaxResults(pageSize);
+                    List list = q.list();
+                    return list;
+                }
+            });
+            return list;
+        } catch (Exception e) {
+            logger.error("查找数据错误.类名称为:" + table, e);
+            return null;
+        }
 
     }
 
@@ -168,7 +195,7 @@ public class BaseDAO extends HibernateDaoSupport {
             s.delete(obj);
             s.flush();
         } catch (Exception e) {
-            logger.error("删除新数据错误.类名称为:" + obj.getClass().getName() + "\n" + e.toString(), e);
+            logger.error("删除新数据错误.类名称为:" + obj.getClass().getName(), e);
             re = false;
         } finally {
             if (s.isOpen())
@@ -191,7 +218,7 @@ public class BaseDAO extends HibernateDaoSupport {
             s.createQuery(strSql).executeUpdate();
             tx.commit();
         } catch (Exception e) {
-            logger.error("执行语句失败.表名:" + "\n" + e.toString() + strSql, e);
+            logger.error("执行语句失败.表名:" + strSql, e);
             re = false;
             tx.rollback();
         } finally {
@@ -200,44 +227,4 @@ public class BaseDAO extends HibernateDaoSupport {
         }
         return re;
     }
-
-    /**
-     * 执行SQL语句，插入或者删除、修改
-     * 
-     * @param strSql
-     * @return
-     */
-    public boolean executeT(String strSql) {
-        boolean re = true;
-        Session s = this.getSession();
-
-        s.createQuery(strSql).executeUpdate();
-
-        return re;
-    }
-
-    /**
-     * 删除数据
-     */
-    public boolean deleteT(Object obj) {
-        boolean re = true;
-        Session s = null;
-
-        s = this.getSession();
-        s.delete(obj);
-
-        return re;
-    }
-
-    public boolean deleteT(String table, String keyName, Object keyField) {
-        boolean re = true;
-        Session s = null;
-        String sql = "delete from " + table + " where " + keyName + "='" + keyField + "'";
-
-        s = this.getSession();
-        s.createQuery(sql).executeUpdate();
-
-        return re;
-    }
-
 }
