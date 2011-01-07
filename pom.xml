@@ -1,18 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.liwei.utils</groupId>
   <artifactId>liwei-java-utils</artifactId>
   <version>1.0.0.20110107</version>
   <packaging>jar</packaging>
-
   <name>liwei-java-utils</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <repositories>
+	<repository>
+	  <id>zhznet</id>
+	  <url>http://mvn.zhznet.com:8081/nexus/content/groups/zhznet</url>
+	</repository>
+  </repositories>
+
+
 
   <dependencies>
 	<dependency>
