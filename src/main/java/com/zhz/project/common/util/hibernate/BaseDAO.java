@@ -8,11 +8,18 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.HibernateTransactionManager;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class BaseDAO extends HibernateDaoSupport {
+    private String              error        = "";
+    public static String        WHERE        = " where 1=1 ";
+    public static String        WHERE_DELETE = " and ifDelete =0 ";
+    HibernateTransactionManager transactionManager;
+
+
     private static Logger logger = Logger.getLogger(BaseDAO.class);
 
     @SuppressWarnings("unchecked")
@@ -204,6 +211,16 @@ public class BaseDAO extends HibernateDaoSupport {
         return re;
     }
 
+    public boolean delete(String table, String keyName, Object keyField) {
+        boolean re = true;
+        Session s = null;
+        String sql = "delete from " + table + " where " + keyName + "='" + keyField + "'";
+
+        s = this.getSession();
+        s.createQuery(sql).executeUpdate();
+
+        return re;
+    }
     /**
      * 执行SQL语句，插入或者删除、修改
      * 
@@ -227,4 +244,33 @@ public class BaseDAO extends HibernateDaoSupport {
         }
         return re;
     }
-}
+    /**
+     * 执行SQL语句，插入或者删除、修改
+     * 
+     * @param strSql
+     * @return
+     */
+    public boolean executeInNewTransaction(String strSql) {
+        boolean re = true;
+        Session s = this.getSession();
+        org.hibernate.Transaction tx = s.beginTransaction();
+        try {
+            s.createQuery(strSql).executeUpdate();
+            tx.commit();
+        } catch (Exception e) {
+            logger.error("执行语句失败.表名:" + strSql, e);
+            re = false;
+            tx.rollback();
+        } finally {
+            if (s.isOpen())
+                s.close();
+        }
+        return re;
+    }
+    public HibernateTransactionManager getTransactionManager() {
+        return transactionManager;
+    }
+
+    public void setTransactionManager(HibernateTransactionManager transactionManager) {
+        this.transactionManager = transactionManager;
+    }}
