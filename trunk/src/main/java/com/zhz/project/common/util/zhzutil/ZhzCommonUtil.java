@@ -60,14 +60,21 @@ public class ZhzCommonUtil {
     }
 
     static public String getFileNameWithTime(String fileName) {
+        return getFileNameWithTimeAndSpecStr(fileName, "");
+    }
+
+    static public String getFileNameWithUnderlineTime(String fileName) {
+        return getFileNameWithTimeAndSpecStr(fileName, "_");
+    }
+
+    static public String getFileNameWithTimeAndSpecStr(String fileName, String str) {
         int dot = fileName.indexOf(".");
         String name = fileName.substring(0, dot);
 
         String ext = fileName.substring(dot, fileName.length());
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
         String time = df.format(new Date());
-        String finalName = name + time + ext;
+        String finalName = name + str + time + ext;
         return finalName;
     }
-
 }
