@@ -18,31 +18,27 @@ import org.apache.velocity.app.VelocityEngine;
  */
 
 public class CeiceiVelocityEngine {
-    private static VelocityEngine ve;
+    private VelocityEngine ve;
+    private String         defaultEncoding;
+    private String         resource;
 
-    public static VelocityEngine getInstance(String resource, String defaultEncoding)
-                                                                                     throws Exception {
-        if (ve == null) {
+    public void init() throws Exception {
+        ve = new VelocityEngine();
+        String fileDir = CeiceiVelocityEngine.class.getResource(resource).getPath();
+        // 初始化并取得Velocity引擎
 
-            ve = new VelocityEngine();
-            String fileDir = CeiceiVelocityEngine.class.getResource(resource).getPath();
-            // 初始化并取得Velocity引擎
+        Properties properties = new Properties();
+        properties.setProperty(VelocityEngine.FILE_RESOURCE_LOADER_PATH, fileDir);
+        properties.setProperty(Velocity.INPUT_ENCODING, defaultEncoding);
+        properties.setProperty("resource.loader", "jar,file");
+        properties.setProperty("jar.resource.loader.description", "properties Jar Resource Loader");
+        properties.setProperty("jar.resource.loader.class",
+            "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
+        properties.setProperty("jar.resource.loader.cache", "false");
+        properties.setProperty("jar.resource.loader.modificationCheckInterval", "2");
 
-            Properties properties = new Properties();
-            properties.setProperty(VelocityEngine.FILE_RESOURCE_LOADER_PATH, fileDir);
-            properties.setProperty(Velocity.INPUT_ENCODING, defaultEncoding);
-            properties.setProperty("resource.loader", "jar,file");
-            properties.setProperty("jar.resource.loader.description",
-                "properties Jar Resource Loader");
-            properties.setProperty("jar.resource.loader.class",
-                "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
-            properties.setProperty("jar.resource.loader.cache", "false");
-            properties.setProperty("jar.resource.loader.modificationCheckInterval", "2");
-
-            //初始化
-            ve.init(properties);
-        }
-        return ve;
+        //初始化
+        ve.init(properties);
     }
 
     /**
@@ -54,12 +50,10 @@ public class CeiceiVelocityEngine {
      * @throws Exception 
      * @throws  
      */
-    public String getContent(Map<String, Object> map, String templateLocation, String resource,
-                             String defaultEncoding) throws Exception {
+    public String getContent(Map<String, Object> map, String templateLocation) throws Exception {
 
-        VelocityEngine velocityEngine = getInstance(resource, defaultEncoding);
         // 取得velocity的模版
-        Template t = velocityEngine.getTemplate(templateLocation);
+        Template t = ve.getTemplate(templateLocation);
 
         // 取得velocity的上下文context
         VelocityContext context = new VelocityContext();
@@ -79,4 +73,11 @@ public class CeiceiVelocityEngine {
         return writer.toString();
     }
 
+    public void setDefaultEncoding(String defaultEncoding) {
+        this.defaultEncoding = defaultEncoding;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
 }
