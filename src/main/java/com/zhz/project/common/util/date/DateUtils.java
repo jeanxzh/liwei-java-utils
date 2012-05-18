@@ -9,13 +9,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
 
 import com.zhz.project.common.util.alibaba.StringUtil;
-import com.zhz.project.common.util.excel.ExcelParser;
 
 /**
  * 日期处理类
@@ -24,7 +24,7 @@ import com.zhz.project.common.util.excel.ExcelParser;
  * @version $Id: DateUtils.java, v 0.1 Jan 7, 2011 3:11:51 AM liwei Exp $
  */
 public class DateUtils {
-    private static Logger      logger          = Logger.getLogger(ExcelParser.class);
+    private static Logger      logger          = Logger.getLogger(DateUtils.class);
 
     /** 完整时间 yyyy-MM-dd HH:mm:ss */
     public static final String simple          = "yyyy-MM-dd HH:mm:ss";
@@ -1212,6 +1212,17 @@ public class DateUtils {
             }
         }
         return false;
+    }
+
+    public static long getDiffDays(Date one, Date two) {
+        Calendar sysDate = new GregorianCalendar();
+
+        sysDate.setTime(one);
+
+        Calendar failDate = new GregorianCalendar();
+
+        failDate.setTime(two);
+        return (sysDate.getTimeInMillis() - failDate.getTimeInMillis()) / (24 * 60 * 60 * 1000);
     }
 
 }
