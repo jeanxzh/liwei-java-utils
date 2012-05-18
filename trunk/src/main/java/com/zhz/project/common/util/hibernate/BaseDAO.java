@@ -19,8 +19,7 @@ public class BaseDAO extends HibernateDaoSupport {
     public static String        WHERE_DELETE = " and ifDelete =0 ";
     HibernateTransactionManager transactionManager;
 
-
-    private static Logger logger = Logger.getLogger(BaseDAO.class);
+    private static Logger       logger       = Logger.getLogger(BaseDAO.class);
 
     @SuppressWarnings("unchecked")
     public List list(String table) {
@@ -221,6 +220,7 @@ public class BaseDAO extends HibernateDaoSupport {
 
         return re;
     }
+
     /**
      * 执行SQL语句，插入或者删除、修改
      * 
@@ -244,6 +244,7 @@ public class BaseDAO extends HibernateDaoSupport {
         }
         return re;
     }
+
     /**
      * 执行SQL语句，插入或者删除、修改
      * 
@@ -267,10 +268,12 @@ public class BaseDAO extends HibernateDaoSupport {
         }
         return re;
     }
+
     public HibernateTransactionManager getTransactionManager() {
         return transactionManager;
     }
 
     public void setTransactionManager(HibernateTransactionManager transactionManager) {
         this.transactionManager = transactionManager;
-    }}
+    }
+}
