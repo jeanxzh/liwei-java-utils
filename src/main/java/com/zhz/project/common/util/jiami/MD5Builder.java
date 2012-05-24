@@ -5,6 +5,11 @@ import java.security.NoSuchAlgorithmException;
 
 import org.apache.log4j.Logger;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version MD5Builder.java, v 0.1 May 24, 2012 3:32:04 PM
+ */
 public class MD5Builder {
     static Logger logger      = Logger.getLogger(MD5Builder.class);
     // 用来将字节转换成 16 进制表示的字符

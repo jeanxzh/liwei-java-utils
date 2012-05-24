@@ -1,7 +1,3 @@
-/**
- * ZhiZun.com Inc.
- * Copyright (c) 2010-2010 All Rights Reserved.
- */
 package com.zhz.project.common.util.zhzutil;
 
 import java.util.Iterator;
@@ -18,9 +14,9 @@ import com.zhz.project.common.util.hibernate.BaseDAO;
 
 /**
  * 页面处理的工具类
- * 
- * @author liwei2672
- * @version $Id: HttpRequestUtil.java, v 0.1 2010-7-17 下午02:38:25 liwei2672 Exp $
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ZhzHttpRequestUtil.java, v 0.1 May 24, 2012 3:29:11 PM
  */
 public class ZhzHttpRequestUtil {
     /**

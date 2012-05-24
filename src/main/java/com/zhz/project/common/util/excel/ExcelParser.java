@@ -1,7 +1,3 @@
-/**
- * Zhz.net Inc.
- * Copyright (c) 2004-2011 All Rights Reserved.
- */
 package com.zhz.project.common.util.excel;
 
 import java.io.File;
@@ -71,8 +67,9 @@ import com.zhz.project.common.util.result.ResultSupport;
  *        } <br>
  *</code> 
  *
- * @author liwei
- * @version $Id: ExcelParser.java, v 0.1 Jan 7, 2011 3:12:40 AM liwei Exp $
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ExcelParser.java, v 0.1 May 24, 2012 3:33:20 PM
  */
 public class ExcelParser {
     private static Logger         logger        = Logger.getLogger(ExcelParser.class);

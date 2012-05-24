@@ -7,9 +7,9 @@ import com.danga.MemCached.MemCachedClient;
 /**
  * 缓存的一个实现类(memcached client)
  * 
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
- * @version 创建时间：2010-5-9 下午08:57:07
- * 
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version CacheClientImpl.java, v 0.1 May 24, 2012 3:31:26 PM
  */
 public class CacheClientImpl implements ICacheClient {
 

@@ -3,6 +3,11 @@ package com.zhz.project.common.util.result;
 import java.io.Serializable;
 import java.util.Map;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version Result.java, v 0.1 May 24, 2012 3:29:49 PM
+ */
 public interface Result extends Serializable {
     /** 在models表中代表默认的model的key。 */
     String DEFAULT_MODEL_KEY = "_defaultModel";

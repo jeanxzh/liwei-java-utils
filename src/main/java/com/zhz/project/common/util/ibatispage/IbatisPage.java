@@ -1,11 +1,5 @@
 package com.zhz.project.common.util.ibatispage;
 
-/**  
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>  
- * @version 创建时间：2010-5-3 下午03:18:05
- * 
- */
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +9,10 @@ import com.zhz.project.common.util.alibaba.StringUtil;
 /*******************************************************************************
  * Page的作用是实现分页功能， list是数据，count是总数，indexPage是当前页，totalPage是总页数
  * afterPage是当前页后面的页数，before是当前页前面的页数，row是每页的记录数
- ******************************************************************************/
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version IbatisPage.java, v 0.1 May 24, 2012 3:32:26 PM
+ */
 //@Service
 public class IbatisPage {
 

@@ -1,17 +1,3 @@
-/* ******************************************************************************
-* Project    : Tools
-* File       : DatedRollingFileAppender.java
-* Author     : Patrick Wyss
-* Creation   : 09.08.2006
-* 
-* Copyright (c) 2006 Patrick Wyss. All rights reserved.
-******************************************************************************
-* Version History:
-*
-* V 1.0    : Inital Version
-*
-*************************************************************************** */
-
 package org.apache.log4j;
 
 import java.io.IOException;
@@ -21,6 +7,11 @@ import java.util.Date;
 import org.apache.log4j.DailyRollingFileAppender;
 import org.apache.log4j.helpers.LogLog;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version DatedRollingFileAppender.java, v 0.1 May 24, 2012 3:37:29 PM
+ */
 public class DatedRollingFileAppender extends DailyRollingFileAppender {
 
     String baseFileName;

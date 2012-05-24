@@ -13,10 +13,9 @@ import org.apache.velocity.app.VelocityEngine;
 
 /**
  *
- * @author 李威-liwei2672@gmail.com
- * @version $Id: HelloVelocity.java, v 0.1 May 9, 2012 1:48:28 PM 李威 Exp $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version CeiceiVelocityEngine.java, v 0.1 May 24, 2012 3:29:34 PM
  */
-
 public class CeiceiVelocityEngine {
     private VelocityEngine ve;
     private String         defaultEncoding;

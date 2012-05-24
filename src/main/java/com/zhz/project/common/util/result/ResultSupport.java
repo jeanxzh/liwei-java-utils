@@ -6,6 +6,11 @@ import java.util.Map;
 
 import com.zhz.project.common.util.alibaba.StringUtil;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ResultSupport.java, v 0.1 May 24, 2012 3:29:54 PM
+ */
 public class ResultSupport implements Result {
     private static final long serialVersionUID = 3976733653567025460L;
     private boolean           success          = true;

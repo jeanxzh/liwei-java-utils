@@ -7,9 +7,9 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
 /**
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
- * @version 创建时间：2010-5-3 下午03:18:05
- * 
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version IbatisPageDAO.java, v 0.1 May 24, 2012 3:32:39 PM
  */
 //@Repository
 public class IbatisPageDAO extends SqlMapClientDaoSupport {

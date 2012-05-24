@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.zhz.project.common.util.zhzutil;
 
 import java.util.Iterator;
@@ -11,9 +8,9 @@ import java.util.Set;
 import org.apache.commons.beanutils.BeanUtils;
 
 /**
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
- * @version 创建时间：2009-12-10 下午09:34:13
- * 
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ZhzCollectionUtil.java, v 0.1 May 24, 2012 3:28:47 PM
  */
 public class ZhzCollectionUtil {
     /**

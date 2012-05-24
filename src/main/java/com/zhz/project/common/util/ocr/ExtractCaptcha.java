@@ -1,7 +1,3 @@
-/**
- * Zhznet.com Inc.
- * Copyright (c) 2004-2012 All Rights Reserved.
- */
 package com.zhz.project.common.util.ocr;
 
 /**
@@ -24,8 +20,8 @@ import com.zhz.project.common.util.alibaba.StringUtil;
  * 
  * 在linux系统调用gocr命令进行图片解析<br/>
  *
- * @author 李威-liwei2672@gmail.com
- * @version $Id: ExtractCaptcha.java, v 0.1 2012-4-18 下午04:04:45 李威 Exp $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ExtractCaptcha.java, v 0.1 May 24, 2012 3:31:08 PM
  */
 public class ExtractCaptcha {
     private static Log   logger             = LogFactory.getLog(ExtractCaptcha.class);
