@@ -1,18 +1,11 @@
-/**
- * 
- */
 package com.zhz.project.common.util.zhzutil;
 
 import com.zhz.project.common.util.alibaba.StringUtil;
 
-/**  
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>  
- * @version 创建时间：2009-12-10 下午09:35:26
- * 
- */
 /**
- * @author liwei
- * 
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ZhzStringUtil.java, v 0.1 May 24, 2012 3:29:22 PM
  */
 public class ZhzStringUtil {
 

@@ -1,7 +1,3 @@
-/**
- * Zhznet.com Inc.
- * Copyright (c) 2004-2012 All Rights Reserved.
- */
 package com.zhz.project.common.util.perf4j;
 
 import java.lang.reflect.Method;
@@ -17,8 +13,8 @@ import org.springframework.aop.MethodBeforeAdvice;
 /**
  * Perf4j拦截器，通过AOP记录方法的执行时间
  *
- * @author 李威-liwei2672@gmail.com
- * @version $Id: Perf4jInterceptor.java, v 0.1 May 11, 2012 12:28:00 PM 李威 Exp $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version Perf4jInterceptor.java, v 0.1 May 24, 2012 3:30:06 PM
  */
 public class Perf4jInterceptor implements MethodBeforeAdvice, AfterReturningAdvice {
 

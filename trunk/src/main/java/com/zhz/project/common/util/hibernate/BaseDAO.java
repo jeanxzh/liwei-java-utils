@@ -12,6 +12,11 @@ import org.springframework.orm.hibernate3.HibernateTransactionManager;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version BaseDAO.java, v 0.1 May 24, 2012 3:32:52 PM
+ */
 @Repository
 public class BaseDAO extends HibernateDaoSupport {
     private String              error        = "";

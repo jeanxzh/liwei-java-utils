@@ -11,8 +11,9 @@ import java.lang.reflect.Method;
  * 这个类中的每个方法都可以“安全”地处理<code>null</code>，而不会抛出<code>NullPointerException</code>。
  * </p>
  * 
- * @author Liwei
- * @version $Id: ObjectUtil.java 2010-02-16 05:42:07Z Liwei $
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ObjectUtil.java, v 0.1 May 24, 2012 3:34:39 PM
  */
 public class ObjectUtil {
     /*

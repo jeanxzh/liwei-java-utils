@@ -7,9 +7,9 @@ import java.util.Date;
 import org.apache.log4j.Logger;
 
 /**
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
- * @version 创建时间：2009-12-10 下午09:40:47
- * 
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ZhzDateUtil.java, v 0.1 May 24, 2012 3:29:04 PM
  */
 public class ZhzDateUtil {
     private static Logger           logger   = Logger.getLogger(ZhzDateUtil.class);

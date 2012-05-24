@@ -1,7 +1,3 @@
-/*
- * Taobao.com Inc.
- * Copyright (c) 2000-2010 All Rights Reserved.
- */
 package com.zhz.project.common.util.page;
 
 import java.util.ArrayList;
@@ -10,8 +6,9 @@ import java.util.Collection;
 /**
  * 包含“分页”信息的<code>List</code>。
  * 
- * @author 李威
- * @version $Id: PageList.java,v 1.1 2010/11/08 14:01:56 liwei Exp $
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version PageList.java, v 0.1 May 24, 2012 3:31:00 PM
  */
 public class PageList extends ArrayList {
     /**

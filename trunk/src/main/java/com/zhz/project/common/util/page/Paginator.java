@@ -72,9 +72,11 @@ import java.io.Serializable;
  * 
  * </p>
  * 
- * @author 李威
- * @version $Id: Paginator.java,v 1.3 2010/04/05 00:55:17 liwei Exp $
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version Paginator.java, v 0.1 May 24, 2012 3:30:39 PM
  */
+@SuppressWarnings("serial")
 public class Paginator implements Serializable, Cloneable {
     /** 每页默认的项数(10)。 */
     public static final int DEFAULT_ITEMS_PER_PAGE = 10;

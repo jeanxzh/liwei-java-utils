@@ -8,9 +8,8 @@ package com.zhz.project.common.util.alibaba;
  * <code>RuntimeException</code>派生。
  * </p>
  * 
- * @author Liwei
- * @version $Id: CloneNotSupportedException.java 2010-03-04 03:23:30Z
- *          Liwei $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version CloneNotSupportedException.java, v 0.1 May 24, 2012 3:34:32 PM
  */
 public class CloneNotSupportedException extends RuntimeException {
     private static final long serialVersionUID = 3257281439807584562L;

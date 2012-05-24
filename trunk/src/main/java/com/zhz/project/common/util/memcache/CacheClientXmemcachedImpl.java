@@ -8,9 +8,8 @@ import net.rubyeye.xmemcached.exception.MemcachedException;
 /**
  * ICacheClient 的 xmemcached客户端 实现(并发性能甚至超越spymemcached)
  * 
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
- * @version 创建时间：2010-5-9 下午08:58:08
- * 
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version CacheClientXmemcachedImpl.java, v 0.1 May 24, 2012 3:31:37 PM
  */
 public class CacheClientXmemcachedImpl implements ICacheClient {
 

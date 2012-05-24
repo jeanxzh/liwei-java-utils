@@ -1,16 +1,3 @@
-/* ******************************************************************************
-* Project    : Tools
-* File       : CleaningCompressingRollingFileAppender.java
-* Author     : Patrick Wyss
-* Creation   : 09.08.2006
-* 
-* Copyright (c) 2006 Patrick Wyss. All rights reserved.
-******************************************************************************
-* Version History:
-*
-* V 1.0    : Inital Version
-*
-*************************************************************************** */
 
 package org.apache.log4j;
 
@@ -20,6 +7,11 @@ import java.util.Calendar;
 
 import org.apache.log4j.helpers.LogLog;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version CleaningCompressingRollingFileAppender.java, v 0.1 May 24, 2012 3:37:11 PM
+ */
 public class CleaningCompressingRollingFileAppender extends CompressingRollingFileAppender {
 
     int                     maxAge          = -1;

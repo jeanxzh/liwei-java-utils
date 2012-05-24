@@ -4,9 +4,8 @@ package com.zhz.project.common.util.memcache;
  * 
  * 缓存接口(所有缓存均必须实现该接口)
  * 
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
- * @version 创建时间：2010-5-9 下午08:53:17
- * 
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ICacheClient.java, v 0.1 May 24, 2012 3:31:45 PM
  */
 public interface ICacheClient {
 

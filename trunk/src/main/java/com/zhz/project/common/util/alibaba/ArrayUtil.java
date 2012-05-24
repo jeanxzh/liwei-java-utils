@@ -14,8 +14,8 @@ import java.util.Map;
  * 这个类中的每个方法都可以“安全”地处理<code>null</code>，而不会抛出<code>NullPointerException</code>。
  * </p>
  * 
- * @author Liwei
- * @version $Id: ArrayUtil.java  2010-01-13 05:40:46Z Liwei $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ArrayUtil.java, v 0.1 May 24, 2012 3:34:10 PM
  */
 public class ArrayUtil {
     /*

@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ZhzCommonUtil.java, v 0.1 May 24, 2012 3:28:58 PM
+ */
 public class ZhzCommonUtil {
     private static Logger logger = Logger.getLogger(ZhzCommonUtil.class);
 

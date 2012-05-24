@@ -11,8 +11,8 @@ import java.util.List;
  * 这个类中的每个方法都可以“安全”地处理<code>null</code>，而不会抛出<code>NullPointerException</code>。
  * </p>
  * 
- * @author Liwei
- * @version $Id: StringUtil.java 2010-08-10 02:01:41Z Liwei $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version StringUtil.java, v 0.1 May 24, 2012 3:34:46 PM
  */
 public class StringUtil {
     /*

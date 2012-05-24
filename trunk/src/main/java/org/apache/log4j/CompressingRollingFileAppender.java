@@ -1,16 +1,3 @@
-/* ******************************************************************************
-* Project    : Tools
-* File       : CompressingRollingFileAppender.java
-* Author     : Patrick Wyss
-* Creation   : 09.08.2006
-* 
-* Copyright (c) 2006 Patrick Wyss. All rights reserved.
-******************************************************************************
-* Version History:
-*
-* V 1.0    : Inital Version
-*
-*************************************************************************** */
 
 package org.apache.log4j;
 
@@ -22,6 +9,11 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version CompressingRollingFileAppender.java, v 0.1 May 24, 2012 3:37:19 PM
+ */
 public class CompressingRollingFileAppender extends DatedRollingFileAppender {
 
     public CompressingRollingFileAppender() {

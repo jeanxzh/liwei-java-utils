@@ -15,9 +15,9 @@ import org.springframework.beans.factory.InitializingBean;
 import com.zhz.project.common.util.alibaba.StringUtil;
 
 /**
- * @author LiWei <a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
- * @version 创建时间：2010-5-9 下午09:50:37
- * 
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version MethodCacheInterceptor.java, v 0.1 May 24, 2012 3:31:54 PM
  */
 public class MethodCacheInterceptor implements MethodInterceptor, InitializingBean {
     private static Logger        logger        = Logger.getLogger(MethodCacheInterceptor.class);

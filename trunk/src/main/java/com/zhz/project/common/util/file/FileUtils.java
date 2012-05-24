@@ -1,7 +1,3 @@
-/**
- * Zhznet.com Inc.
- * Copyright (c) 2004-2012 All Rights Reserved.
- */
 package com.zhz.project.common.util.file;
 
 import java.io.BufferedReader;
@@ -28,8 +24,9 @@ import org.apache.log4j.Logger;
 
 /**
  *
- * @author Administrator
- * @version $Id: FileUtils.java, v 0.1 May 18, 2012 9:31:11 AM Administrator Exp $
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version FileUtils.java, v 0.1 May 24, 2012 3:32:59 PM
  */
 public class FileUtils {
     private static Logger logger = Logger.getLogger(FileUtils.class);

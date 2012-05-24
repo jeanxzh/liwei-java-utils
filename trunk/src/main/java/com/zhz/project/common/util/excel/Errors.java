@@ -1,7 +1,3 @@
-/**
- * Zhz.net Inc.
- * Copyright (c) 2004-2011 All Rights Reserved.
- */
 package com.zhz.project.common.util.excel;
 
 import java.util.ArrayList;
@@ -14,8 +10,8 @@ import java.util.List;
  * </p>
  * 
  *
- * @author liwei
- * @version $Id: Errors.java, v 0.1 Jan 7, 2011 3:08:04 AM liwei Exp $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version Errors.java, v 0.1 May 24, 2012 3:33:10 PM
  */
 public class Errors {
     private List<Error> errors = new ArrayList<Error>();

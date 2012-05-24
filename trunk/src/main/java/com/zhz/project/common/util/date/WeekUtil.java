@@ -1,14 +1,5 @@
-/**
- * Zhznet.com Inc.
- * Copyright (c) 2004-2012 All Rights Reserved.
- */
 package com.zhz.project.common.util.date;
 
-/**
- *
- * @author Administrator
- * @version $Id: WeekUtil.java, v 0.1 May 18, 2012 9:09:43 AM Administrator Exp $
- */
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -20,8 +11,8 @@ import org.apache.log4j.Logger;
 
 /**
  *
- * @author Administrator
- * @version $Id: WeekUtil.java, v 0.1 May 18, 2012 9:15:10 AM Administrator Exp $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version WeekUtil.java, v 0.1 May 24, 2012 3:33:42 PM
  */
 public class WeekUtil {
     private static Logger logger = Logger.getLogger(WeekUtil.class);

@@ -1,7 +1,3 @@
-/**
- * Zhz.net Inc.
- * Copyright (c) 2004-2011 All Rights Reserved.
- */
 package com.zhz.project.common.util.date;
 
 import java.text.DateFormat;
@@ -20,8 +16,8 @@ import com.zhz.project.common.util.alibaba.StringUtil;
 /**
  * 日期处理类
  *
- * @author liwei
- * @version $Id: DateUtils.java, v 0.1 Jan 7, 2011 3:11:51 AM liwei Exp $
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version DateUtils.java, v 0.1 May 24, 2012 3:33:30 PM
  */
 public class DateUtils {
     private static Logger      logger          = Logger.getLogger(DateUtils.class);

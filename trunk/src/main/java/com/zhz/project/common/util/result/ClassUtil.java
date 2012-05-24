@@ -1,5 +1,10 @@
 package com.zhz.project.common.util.result;
 
+/**
+ *
+ * @author LiWei：<a href="mailto:liwei2672@gmail.com">liwei2672@gmail.com</a>
+ * @version ClassUtil.java, v 0.1 May 24, 2012 3:29:44 PM
+ */
 public class ClassUtil {
 	/** 资源文件的分隔符： <code>'/'</code>。 */
 	public static final char RESOURCE_SEPARATOR_CHAR = '/';
